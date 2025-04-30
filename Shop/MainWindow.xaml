@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Shop"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type local:HomePageViewModel}">
+            <local:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:CartViewModel}">
+            <local:CartView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:ProfileViewModel}">
+            <local:ProfileView/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <local:NavigationPanel/>
     </Grid>
