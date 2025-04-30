@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    public class HomePageViewModel
+    public class CartViewModel
     {
     }
 }
