@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Shop
+namespace Shop.NavigationPanel
 {
     /// <summary>
     /// Interaction logic for NavigationPanel.xaml
