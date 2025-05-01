@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Shop
+namespace Shop.Header
 {
     /// <summary>
     /// Interaction logic for Header.xaml

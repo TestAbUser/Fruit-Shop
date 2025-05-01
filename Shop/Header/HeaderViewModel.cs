@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop
+namespace Shop.Header
 {
-    public class HeaderViewModel
+    class HeaderViewModel
     {
     }
 }
