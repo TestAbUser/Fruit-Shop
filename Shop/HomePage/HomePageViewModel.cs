@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shop.HomePage
 {
-    public class HomePageViewModel
+    public class HomePageViewModel: IPageViewModel
     {
+        public string Name => "Home";
     }
 }
