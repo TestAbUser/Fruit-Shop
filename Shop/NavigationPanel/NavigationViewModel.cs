@@ -10,6 +10,7 @@ namespace Shop.NavigationPanel
     public class NavigationViewModel: INotifyPropertyChanged
     {
 
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName = "")
