@@ -4,22 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shop"
+        xmlns:hp="clr-namespace:Shop.HomePage"
         xmlns:cp="clr-namespace:Shop.CartPage"
+        xmlns:pp="clr-namespace:Shop.ProfilePage"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
     <Window.Resources>
-        <DataTemplate DataType="{x:Type local:HomePageViewModel}">
-            <local:HomeView/>
+        <DataTemplate DataType="{x:Type hp:HomePageViewModel}">
+            <hp:HomeView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type cp:CartViewModel}">
             <cp:CartView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type local:ProfileViewModel}">
-            <local:ProfileView/>
+        <DataTemplate DataType="{x:Type pp:ProfileViewModel}">
+            <pp:ProfileView/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <local:NavigationPanel/>
+        <!--<local:NavigationPanel/>-->
     </Grid>
 </Window>

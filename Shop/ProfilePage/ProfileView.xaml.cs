@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Shop
+namespace Shop.ProfilePage
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for ProfileView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class ProfileView : UserControl
     {
-        public HomeView()
+        public ProfileView()
         {
             InitializeComponent();
         }
