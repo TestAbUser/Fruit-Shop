@@ -1,4 +1,6 @@
-﻿using Shop.UtilityClasses;
+﻿using Shop.CartPage;
+using Shop.HomePage;
+using Shop.UtilityClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +14,14 @@ namespace Shop.NavigationPanel
         private List<IPageViewModel>? _pageViewModels;
 
         private ICommand? _switchPageCommand;
+
+        public NavigationViewModel() 
+        {
+            PageViewModels.Add(new HomePageViewModel());
+            PageViewModels.Add(new CartViewModel());
+
+            PageViewModel = PageViewModels[0];
+        }
 
         public ICommand SwitchPageCommand =>
             _switchPageCommand ??= new RelayCommand(vm => SwitchPage((IPageViewModel)vm));

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Shop.NavigationPanel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,9 @@ namespace Shop
         public MainWindow()
         {
             InitializeComponent();
+            NavigationViewModel context = new();
+                DataContext = context;
+               this.Show();
         }
     }
 }

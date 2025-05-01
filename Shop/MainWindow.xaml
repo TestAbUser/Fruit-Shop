@@ -7,9 +7,10 @@
         xmlns:hp="clr-namespace:Shop.HomePage"
         xmlns:cp="clr-namespace:Shop.CartPage"
         xmlns:pp="clr-namespace:Shop.ProfilePage"
+        xmlns:np="clr-namespace:Shop.NavigationPanel" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-
+    
     <Window.Resources>
         <DataTemplate DataType="{x:Type hp:HomePageViewModel}">
             <hp:HomeView/>
@@ -21,7 +22,6 @@
             <pp:ProfileView/>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
-        <!--<local:NavigationPanel/>-->
-    </Grid>
+
+         <np:NavigationPanel/>
 </Window>

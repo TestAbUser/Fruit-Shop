@@ -6,11 +6,18 @@
              xmlns:local="clr-namespace:Shop.NavigationPanel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    
         <DockPanel LastChildFill="False" Background="AliceBlue">
-            <Button DockPanel.Dock="Top" Height="50">Home</Button>
-            <Button DockPanel.Dock="Top" Height="50">Cart</Button>
-            <Button DockPanel.Dock="Top" Height="50">Profile</Button>
-        </DockPanel>
-    </Grid>
+        <ItemsControl ItemsSource="{Binding PageViewModels}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}"
+                            Command="{Binding DataContext.SwitchPageCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                            CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            
+        </ItemsControl>
+        <ContentControl Content="{Binding PageViewModel}"/>
+    </DockPanel>
 </UserControl>
