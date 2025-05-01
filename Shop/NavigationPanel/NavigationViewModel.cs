@@ -12,6 +12,9 @@ namespace Shop.NavigationPanel
     public class NavigationViewModel: INotifyPropertyChanged
     {
         private IPageViewModel? _pageViewModel;
+        private List<IPageViewModel>? _pageViewModels;
+
+        public List<IPageViewModel> PageViewModels => _pageViewModels ??= [];
 
         public IPageViewModel? PageViewModel
         {
