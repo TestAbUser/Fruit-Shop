@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shop.CartPage
 {
-    public class CartViewModel
+    public class CartViewModel: IPageViewModel
     {
+        public string Name => "Cart";
     }
 }
