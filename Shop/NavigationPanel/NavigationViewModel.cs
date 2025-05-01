@@ -1,5 +1,6 @@
 ﻿using Shop.CartPage;
 using Shop.HomePage;
+using Shop.ProfilePage;
 using Shop.UtilityClasses;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Shop.NavigationPanel
         {
             PageViewModels.Add(new HomePageViewModel());
             PageViewModels.Add(new CartViewModel());
+            PageViewModels.Add(new ProfileViewModel());
 
             PageViewModel = PageViewModels[0];
         }

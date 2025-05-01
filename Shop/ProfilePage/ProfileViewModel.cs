@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shop.ProfilePage
 {
-    public class ProfileViewModel
+    public class ProfileViewModel: IPageViewModel
     {
+        public string Name => "Profile";
     }
 }
