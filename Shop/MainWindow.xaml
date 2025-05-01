@@ -23,5 +23,13 @@
         </DataTemplate>
     </Window.Resources>
 
-         <np:NavigationPanel/>
+    
+    <Grid>
+        <DockPanel HorizontalAlignment="Left" Width="100">
+            <np:NavigationPanel/>
+        </DockPanel>
+        
+        <ContentControl Content="{Binding PageViewModel}"/>
+    </Grid>
+
 </Window>

@@ -18,6 +18,5 @@
             </ItemsControl.ItemTemplate>
             
         </ItemsControl>
-        <ContentControl Content="{Binding PageViewModel}"/>
     </DockPanel>
 </UserControl>
