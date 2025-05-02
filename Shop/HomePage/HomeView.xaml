@@ -9,8 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <!--<Grid HorizontalAlignment="Center">-->
-    <ListBox HorizontalContentAlignment="Stretch" 
-         VerticalContentAlignment="Stretch"
+    <ListBox HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
         ItemsSource="{Binding Products}" >
         <ListBox.ItemsPanel>
             <ItemsPanelTemplate>
@@ -19,7 +18,7 @@
         </ListBox.ItemsPanel>
         <ListBox.ItemTemplate>
             <DataTemplate>
-                <Grid Background="Green" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid Background="Beige" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <Grid.InputBindings>
                         
                     </Grid.InputBindings>
@@ -31,8 +30,11 @@
                             </Image.Source>
                         </Image>
                         <TextBlock HorizontalAlignment="Center" 
-                                   VerticalAlignment="Bottom" 
-                                   Text="{Binding Name}"/>
+                                   VerticalAlignment="Bottom">
+                            <Run Text="{Binding Name}"/>
+                            <Run Text="{Binding Quantity}"/>
+                        </TextBlock>
+                        <Button HorizontalAlignment="Center">Buy</Button>
                     </StackPanel>
                 </Grid>
             </DataTemplate>

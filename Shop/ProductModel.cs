@@ -42,7 +42,7 @@ namespace Shop
         {
             get => _quantity;
 
-            private set
+            set
             {
                 if (value == _quantity) return;
                 _quantity = value;
