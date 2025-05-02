@@ -52,10 +52,10 @@ namespace Shop
 
         public ObservableCollection<ProductModel> GetProducts()
         {
-            Products.Add(new ProductModel { Name = "Bananas", PictureUrl = "", Quantity = 50 });
-            Products.Add(new ProductModel { Name = "Tomatoes", PictureUrl = "", Quantity = 150 });
-            Products.Add(new ProductModel { Name = "Apples", PictureUrl = "", Quantity = 71 });
-            Products.Add(new ProductModel { Name = "Pears", PictureUrl = "", Quantity = 33 });
+            Products.Add(new ProductModel { Name = "Bananas", PictureUrl = "Images/bananas.jpg", Quantity = 50 });
+            Products.Add(new ProductModel { Name = "Tomatoes", PictureUrl = "Images/tomatoes.jpg", Quantity = 150 });
+            Products.Add(new ProductModel { Name = "Apples", PictureUrl = "Images/apples.jpg", Quantity = 71 });
+            Products.Add(new ProductModel { Name = "Pears", PictureUrl = "Images/pears.jpg", Quantity = 33 });
             return Products;
         }
     }
