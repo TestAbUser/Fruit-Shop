@@ -8,6 +8,6 @@ namespace Shop.ProfilePage
 {
     public class ProfileViewModel: IPageViewModel
     {
-        public string Name => "Profile";
+        public string PageName => "Profile";
     }
 }

@@ -8,6 +8,6 @@ namespace Shop
 {
     public interface IPageViewModel
     {
-        string Name { get; }
+        string PageName { get; }
     }
 }

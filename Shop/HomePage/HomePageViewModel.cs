@@ -11,7 +11,7 @@ namespace Shop.HomePage
     public class HomePageViewModel:ObservableObject, IPageViewModel
     {
         private ProductModel _product;
-        public string Name => "Home";
+        public string PageName => "Home";
 
         public HomePageViewModel() 
         {
