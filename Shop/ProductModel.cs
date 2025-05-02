@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Shop.UtilityClasses;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -7,14 +9,54 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-    public class ProductModel: INotifyPropertyChanged
+    public class ProductModel : ObservableObject
     {
+        private string? _pictureUrl;
+        private string? _name;
+        private int _quantity;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName = "")
+        public string? PictureUrl
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get => _pictureUrl;
+            set
+            {
+                if (value == _pictureUrl) return;
+                _pictureUrl = value;
+                OnPropertyChanged(nameof(PictureUrl));
+            }
+        }
+        public string? Name
+        {
+            get => _name;
+            set
+            {
+                if (value == _name) return;
+                _name = value;
+                OnPropertyChanged(nameof(Name));
+            }
         }
 
+        public int Quantity
+        {
+            get => _quantity;
+
+            private set
+            {
+                if (value == _quantity) return;
+                _quantity = value;
+                OnPropertyChanged(nameof(Quantity));
+            }
+        }
+
+        public ObservableCollection<ProductModel> Products { get; } = [];
+
+        public ObservableCollection<ProductModel> GetProducts()
+        {
+            Products.Add(new ProductModel { Name = "Bananas", PictureUrl = "", Quantity = 50 });
+            Products.Add(new ProductModel { Name = "Tomatoes", PictureUrl = "", Quantity = 150 });
+            Products.Add(new ProductModel { Name = "Apples", PictureUrl = "", Quantity = 71 });
+            Products.Add(new ProductModel { Name = "Pears", PictureUrl = "", Quantity = 33 });
+            return Products;
+        }
     }
 }
