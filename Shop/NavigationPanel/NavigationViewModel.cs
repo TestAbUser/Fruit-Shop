@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Shop.NavigationPanel
 {
-    public class NavigationViewModel : INotifyPropertyChanged
+    public class NavigationViewModel : ObservableObject
     {
         private IPageViewModel? _pageViewModel;
         private List<IPageViewModel>? _pageViewModels;
@@ -47,13 +47,6 @@ namespace Shop.NavigationPanel
                 PageViewModels.Add(viewModel);
 
             PageViewModel = PageViewModels.FirstOrDefault(v => v == viewModel);
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
     }
