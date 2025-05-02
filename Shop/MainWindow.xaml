@@ -23,17 +23,11 @@
             <pp:ProfileView/>
         </DataTemplate>
     </Window.Resources>
-
     
-    <Grid>
-        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="100">
-            <h:Header/>
-        </DockPanel>
-        <DockPanel HorizontalAlignment="Left" Width="100">
-            <np:NavigationPanel/>
-        </DockPanel>
-        
+    <DockPanel Background="Orange">
+        <np:NavigationPanel DockPanel.Dock="Left"/>
+        <h:Header DockPanel.Dock="Top"/>
         <ContentControl Content="{Binding PageViewModel}"/>
-    </Grid>
+    </DockPanel>
 
 </Window>

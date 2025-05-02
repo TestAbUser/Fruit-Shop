@@ -8,6 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+    <!--<Grid HorizontalAlignment="Center">-->
     <ListBox HorizontalContentAlignment="Stretch" 
          VerticalContentAlignment="Stretch"
         ItemsSource="{Binding Products}" >
@@ -36,7 +37,9 @@
                 </Grid>
             </DataTemplate>
         </ListBox.ItemTemplate>
+           
     </ListBox>
+    <!--</Grid>-->
 
     <!--<UniformGrid>
         <UniformGrid.Resources>
