@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Header
 {
-    class HeaderViewModel
+   public class HeaderViewModel
     {
     }
 }

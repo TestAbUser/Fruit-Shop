@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shop"
+        xmlns:h="clr-namespace:Shop.Header"
         xmlns:hp="clr-namespace:Shop.HomePage"
         xmlns:cp="clr-namespace:Shop.CartPage"
         xmlns:pp="clr-namespace:Shop.ProfilePage"
@@ -25,6 +26,9 @@
 
     
     <Grid>
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="100">
+            <h:Header/>
+        </DockPanel>
         <DockPanel HorizontalAlignment="Left" Width="100">
             <np:NavigationPanel/>
         </DockPanel>
