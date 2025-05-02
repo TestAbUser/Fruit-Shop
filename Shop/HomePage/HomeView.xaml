@@ -7,31 +7,89 @@
              d:DataContext="{d:DesignInstance Type=local:HomePageViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <ItemsControl ItemsSource="{Binding Products}">
+
+    <ListBox HorizontalContentAlignment="Stretch" 
+         VerticalContentAlignment="Stretch"
+        ItemsSource="{Binding Products}" >
+        <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+                <UniformGrid Columns="2"/>
+            </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <Grid Background="Green" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.InputBindings>
+                        
+                    </Grid.InputBindings>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <Image Width="200">
+                            <Image.Source>
+                                <BitmapImage DecodePixelWidth="200" UriSource="{Binding Path=PictureUrl}"/>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock HorizontalAlignment="Center" 
+                                   VerticalAlignment="Bottom" 
+                                   Text="{Binding Name}"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+
+    <!--<UniformGrid>
+        <UniformGrid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Height" Value="Auto"/>
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Background" Value="LightBlue"/>
+            </Style>
+            <Style x:Name="TextBlockStyle" TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="Foreground" Value="Wheat"/>
+            </Style>
+        </UniformGrid.Resources>
+        <Border>
+            
+            <TextBlock Text="TEXT"/>
+        </Border>
+        <Border>
+            <TextBlock Text="TEXT"/>
+        </Border>-->
+        
+        
+        <!--<ItemsControl ItemsSource="{Binding Products}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Width="200">
-                                <Image.Source>
-                                    <BitmapImage DecodePixelWidth="200"
-                                                 UriSource="{Binding Path=PictureUrl}"/>
-                                </Image.Source>
-                            </Image>
-                            <TextBlock Text="{Binding Path=Name}"/>
-                            <!--<TextBlock.Text >Text</TextBlock.Text>-->
+                    <Border BorderThickness="1">
+                        <StackPanel >
+                            <UniformGrid>
+                               
+                                <Image Width="200">
+                                    <Image.Source>
+                                        <BitmapImage DecodePixelWidth="200"
+                                 UriSource="{Binding Path=PictureUrl}"/>
+                                    </Image.Source>
+                                </Image>
+                                    <TextBlock Text="{Binding Path=Name}"/>
+                            </UniformGrid>
+                            --><!--<TextBlock Text="{Binding Path=Name}"/>-->
+                            <!--<TextBlock.Text >Text</TextBlock.Text>--><!--
 
                         </StackPanel>
                     </Border>
                 </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsControl.ItemsPanel>
+            </ItemsControl.ItemTemplate>-->
+            <!--<ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid HorizontalAlignment="Center" Columns="1"/>
                 </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+            </ItemsControl.ItemsPanel>-->
             
-        </ItemsControl>
-    </Grid>
+        <!--</ItemsControl>-->
+    <!--</UniformGrid>-->
 </UserControl>
