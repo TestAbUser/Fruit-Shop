@@ -13,7 +13,12 @@
                 <DataTemplate>
                     <Border>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="https://www.gettyimages.com/detail/photo/banana-bunch-royalty-free-image/173242750?adppopup=true"/>
+                            <Image Width="200">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="200"
+                                                 UriSource="{Binding Path=PictureUrl}"/>
+                                </Image.Source>
+                            </Image>
                             <TextBlock Text="{Binding Path=Name}"/>
                             <!--<TextBlock.Text >Text</TextBlock.Text>-->
 
