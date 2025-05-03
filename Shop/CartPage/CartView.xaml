@@ -4,16 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Shop.CartPage"
+             xmlns:hp="clr-namespace:Shop.HomePage" 
+             d:DataContext="{d:DesignInstance Type=hp:HomePageViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <!--LoadingRow="DataGrid_LoadingRow"-->
     <StackPanel>
         <Label>
             Total number 
         </Label>
-    
-    <DataGrid x:Name="dataGrid"
-              
+        <DataGrid x:Name="dataGrid"
+                  ItemsSource="{Binding Products}"
           HorizontalGridLinesBrush="CadetBlue"
           VerticalGridLinesBrush="CadetBlue"
           Grid.Row="0" 
@@ -24,15 +26,15 @@
             <DataGridTextColumn Header="Product"
                             IsReadOnly="True"
                             Width="*"
-                            Binding="{Binding Path=ProductName}"/>
+                            Binding="{Binding Name}"/>
             <DataGridTextColumn Header="Quantity"
                  IsReadOnly="True"
                  Width="*"
-                 Binding="{Binding Path=Quantity}"/>
+                 Binding="{Binding Quantity}"/>
             <DataGridTextColumn Header="In Stock"
                             Width="Auto"
                             IsReadOnly="True"
-                            Binding="{Binding Path=IsInStock}">
+                            Binding="{Binding IsInStock}">
             </DataGridTextColumn>
         </DataGrid.Columns>
     </DataGrid>
