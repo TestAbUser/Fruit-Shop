@@ -50,6 +50,13 @@ namespace Shop.CartPage
 
         public string PageName => "Cart";
 
-        public ObservableCollection<ProductModel> Products { get; } = [];
+        //private ProductModel _product;
+
+        //public CartViewModel()
+        //{
+        //    //  _product = new();
+        //    Products.Add(new ProductModel { Name = "fd" });//_product.GetProducts();
+        //}
+        //public ObservableCollection<ProductModel> Products { get; } = [];
     }
 }

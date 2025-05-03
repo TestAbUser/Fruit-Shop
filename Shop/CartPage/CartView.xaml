@@ -3,19 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Shop.CartPage"
-             xmlns:hp="clr-namespace:Shop.HomePage" 
-             d:DataContext="{d:DesignInstance Type=hp:HomePageViewModel}"
+             xmlns:local="clr-namespace:Shop.HomePage" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <!--LoadingRow="DataGrid_LoadingRow"-->
+    <UserControl.DataContext>
+        <local:HomePageViewModel/>
+    </UserControl.DataContext>
+
     <StackPanel>
         <Label>
             Total number 
         </Label>
         <DataGrid x:Name="dataGrid"
                   ItemsSource="{Binding Products}"
+                  LoadingRow="DataGrid_LoadingRow"
           HorizontalGridLinesBrush="CadetBlue"
           VerticalGridLinesBrush="CadetBlue"
           Grid.Row="0" 
