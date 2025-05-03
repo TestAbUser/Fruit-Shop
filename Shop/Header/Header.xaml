@@ -12,13 +12,13 @@
 
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type hp:HomePageViewModel}">
-            <TextBlock Text="{Binding Path=Name}"/>
+            <TextBlock Text="{Binding Path=PageName}"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type cp:CartViewModel}">
-            <TextBlock Text="{Binding Path=Name}"/>
+            <TextBlock Text="{Binding Path=PageName}"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type pp:ProfileViewModel}">
-            <TextBlock Text="{Binding Path=Name}"/>
+            <TextBlock Text="{Binding Path=PageName}"/>
         </DataTemplate>
     </UserControl.Resources>
 

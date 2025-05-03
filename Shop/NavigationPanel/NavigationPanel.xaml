@@ -11,7 +11,7 @@
         <ItemsControl ItemsSource="{Binding PageViewModels}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Content="{Binding Name}"
+                    <Button Content="{Binding PageName}"
                             Command="{Binding DataContext.SwitchPageCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                             CommandParameter="{Binding}"/>
                 </DataTemplate>

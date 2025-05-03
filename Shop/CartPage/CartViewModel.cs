@@ -1,6 +1,7 @@
 ﻿using Shop.UtilityClasses;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,5 +49,7 @@ namespace Shop.CartPage
         }
 
         public string PageName => "Cart";
+
+        public ObservableCollection<ProductModel> Products { get; } = [];
     }
 }
