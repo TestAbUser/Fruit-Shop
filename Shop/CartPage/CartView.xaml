@@ -11,13 +11,13 @@
     </UserControl.DataContext>
 
     <StackPanel>
-                <TextBlock>
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="Total number of products: {0}">
-                         <Binding ElementName="dataGrid" Path="Items.Count"/>
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
+        <TextBlock>
+            <TextBlock.Text>
+                <MultiBinding StringFormat="Total number of products: {0}">
+                    <Binding ElementName="dataGrid" Path="Items.Count"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
         <!--<TextBlock Text="{Binding ElementName=dataGrid,Path=Items.Count}">-->
 
         <DataGrid x:Name="dataGrid"
@@ -29,21 +29,35 @@
           IsReadOnly="False"
           CanUserAddRows="False"
           AutoGenerateColumns="False">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Product"
+            <DataGrid.Resources>
+                <Style x:Key="ImageStyle" TargetType="{x:Type Image}">
+                    <Setter Property="Source" Value="/Images/greenCheckMark.png"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsInStock}" Value="False">
+                            <Setter Property="Source" Value="/Images/failedMark.png"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+                <DataTemplate x:Key="ImageColumnTemplate">
+                    <Image Style="{StaticResource ImageStyle}"/>
+                </DataTemplate>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Product"
                             IsReadOnly="True"
                             Width="*"
                             Binding="{Binding Name}"/>
-            <DataGridTextColumn Header="Quantity"
-                 IsReadOnly="True"
-                 Width="*"
-                 Binding="{Binding Quantity}"/>
-            <DataGridTextColumn Header="In Stock"
-                            Width="Auto"
-                            IsReadOnly="True"
-                            Binding="{Binding IsInStock}">
-            </DataGridTextColumn>
-        </DataGrid.Columns>
-    </DataGrid>
+                <DataGridTextColumn Header="Quantity"
+                                IsReadOnly="False"
+                                Width="*"
+                                Binding="{Binding Quantity}"/>
+                <DataGridTemplateColumn Header="In Stock"
+                                    Width="Auto"
+                                    IsReadOnly="True"
+                                    CellTemplate="{StaticResource ImageColumnTemplate}"/>
+                <!--Binding="{Binding IsInStock}-->
+
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 </UserControl>
