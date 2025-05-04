@@ -32,7 +32,7 @@
                         <TextBlock HorizontalAlignment="Center" 
                                    VerticalAlignment="Bottom">
                             <Run Text="{Binding Name}"/>
-                            <Run Text="{Binding Quantity}"/>
+                            <Run Text="{Binding QuantityInStock}"/>
                         </TextBlock>
                         <Button HorizontalAlignment="Center">Buy</Button>
                     </StackPanel>
