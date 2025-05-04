@@ -16,7 +16,6 @@
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
-        <!--<TextBlock Text="{Binding ElementName=dataGrid,Path=Items.Count}">-->
 
         <DataGrid x:Name="dataGrid"
                   ItemsSource="{Binding Products}"

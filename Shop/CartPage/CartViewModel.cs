@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Shop.CartPage
 {
-    public class CartViewModel: ObservableObject, IPageViewModel
+    public class CartViewModel : ObservableObject, IPageViewModel
     {
         private string? _productName;
-        private bool _isInStock;
         private int _quantity;
         private readonly ProductModel _product;
 
@@ -32,16 +31,7 @@ namespace Shop.CartPage
             }
         }
 
-        public bool IsInStock
-        {
-            get => _isInStock;
-            set
-            {
-                if (value == _isInStock) return;
-                _isInStock = value;
-                OnPropertyChanged(nameof(IsInStock));
-            }
-        }
+        public bool IsInStock => _quantity <= _product.Quantity;
 
         public int Quantity
         {
@@ -57,7 +47,6 @@ namespace Shop.CartPage
 
         public string PageName => "Cart";
 
-        
         public ObservableCollection<ProductModel> Products { get; } = [];
     }
 }
