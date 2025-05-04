@@ -47,7 +47,7 @@
                 <DataGridTextColumn Header="Quantity"
                                 IsReadOnly="False"
                                 Width="*"
-                                Binding="{Binding Quantity}"/>
+                                Binding="{Binding QuantityToBuy}"/>
                 <DataGridTemplateColumn Header="In Stock"
                                     Width="Auto"
                                     IsReadOnly="True"
