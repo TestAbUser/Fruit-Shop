@@ -49,11 +49,9 @@
                                 Width="*"
                                 Binding="{Binding QuantityToBuy}"/>
                 <DataGridTemplateColumn Header="In Stock"
-                                    Width="Auto"
-                                    IsReadOnly="True"
-                                    CellTemplate="{StaticResource ImageColumnTemplate}"/>
-                <!--Binding="{Binding IsInStock}-->
-
+                                        Width="Auto"
+                                        IsReadOnly="True"
+                                        CellTemplate="{StaticResource ImageColumnTemplate}"/>
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>
