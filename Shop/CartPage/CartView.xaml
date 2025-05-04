@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <StackPanel>
-        <TextBlock>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top">
             <TextBlock.Text>
                 <MultiBinding StringFormat="Total number of products: {0}">
                     <Binding ElementName="dataGrid" Path="Items.Count"/>
@@ -17,7 +17,7 @@
             </TextBlock.Text>
         </TextBlock>
 
-        <DataGrid x:Name="dataGrid"
+        <DataGrid x:Name="dataGrid" DockPanel.Dock="Top"
                   ItemsSource="{Binding Products}"
                   LoadingRow="DataGrid_LoadingRow"
           HorizontalGridLinesBrush="CadetBlue"
@@ -56,5 +56,5 @@
 
             </DataGrid.Columns>
         </DataGrid>
-    </StackPanel>
+    </DockPanel>
 </UserControl>
