@@ -51,7 +51,7 @@ namespace Shop
 
         public ObservableCollection<ProductModel> Products { get; } = [];
 
-        public ObservableCollection<ProductModel> GetProducts()
+        public ObservableCollection<ProductModel> CreateProducts()
         {
             Products.Add(new ProductModel { Name = "Bananas", PictureUrl = "/Images/bananas.jpg", Quantity = 50 });
             Products.Add(new ProductModel { Name = "Tomatoes", PictureUrl = "/Images/tomatoes.jpg", Quantity = 150 });

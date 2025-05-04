@@ -16,7 +16,7 @@ namespace Shop.HomePage
         public HomePageViewModel(ProductModel product) 
         {
             _product= product;
-            Products = _product.GetProducts();
+            Products = _product.CreateProducts();
         }
         public ObservableCollection<ProductModel> Products { get;} = [];
     }
