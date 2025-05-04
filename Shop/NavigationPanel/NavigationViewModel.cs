@@ -18,8 +18,9 @@ namespace Shop.NavigationPanel
 
         public NavigationViewModel() 
         {
-            PageViewModels.Add(new HomePageViewModel());
-            PageViewModels.Add(new CartViewModel());
+            ProductModel product = new();
+            PageViewModels.Add(new HomePageViewModel(product));
+            PageViewModels.Add(new CartViewModel(product));
             PageViewModels.Add(new ProfileViewModel());
 
             PageViewModel = PageViewModels[0];

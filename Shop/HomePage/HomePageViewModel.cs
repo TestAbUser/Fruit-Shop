@@ -10,12 +10,12 @@ namespace Shop.HomePage
 {
     public class HomePageViewModel:ObservableObject, IPageViewModel
     {
-        private ProductModel _product;
+        private readonly ProductModel _product;
         public string PageName => "Home";
 
-        public HomePageViewModel() 
+        public HomePageViewModel(ProductModel product) 
         {
-            _product = new ();
+            _product= product;
             Products = _product.GetProducts();
         }
         public ObservableCollection<ProductModel> Products { get;} = [];

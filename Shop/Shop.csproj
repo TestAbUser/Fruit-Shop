@@ -22,7 +22,7 @@
     <Resource Include="Images\failedMark.png" />
     <Resource Include="Images\pears.jpg" />
     <Resource Include="Images\tomatoes.jpg" />
-    <Content Include="Images\greenCheckMark.png" />
+    <Resource Include="Images\greenCheckMark.png" />
   </ItemGroup>
 
 </Project>

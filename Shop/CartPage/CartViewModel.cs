@@ -13,6 +13,13 @@ namespace Shop.CartPage
         private string? _productName;
         private bool _isInStock;
         private int _quantity;
+        private readonly ProductModel _product;
+
+        public CartViewModel(ProductModel product)
+        {
+            _product = product;
+            Products = _product.Products;
+        }
 
         public string? ProductName
         {
@@ -50,13 +57,7 @@ namespace Shop.CartPage
 
         public string PageName => "Cart";
 
-        //private ProductModel _product;
-
-        //public CartViewModel()
-        //{
-        //    //  _product = new();
-        //    Products.Add(new ProductModel { Name = "fd" });//_product.GetProducts();
-        //}
-        //public ObservableCollection<ProductModel> Products { get; } = [];
+        
+        public ObservableCollection<ProductModel> Products { get; } = [];
     }
 }
