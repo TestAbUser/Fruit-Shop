@@ -12,8 +12,19 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <DockPanel Grid.Column="1">
+        <DockPanel Grid.Column="0" LastChildFill="False">
+            <Image DockPanel.Dock="Top"></Image>
+            <TextBlock DockPanel.Dock="Top">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat=" {0} {1} &#x0a; {2} years old">
+                        <Binding ElementName="firstName" Path="Text"/>
+                        <Binding ElementName="lastName" Path="Text"/>
+                        <Binding ElementName="age" Path="Text"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+        </DockPanel>
+        <DockPanel Grid.Column="1" LastChildFill="False">
             <GroupBox DockPanel.Dock="Top">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -26,11 +37,11 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Label Content="First Name" Grid.Column="0" Grid.Row="0"/>
-                        <TextBox Grid.Column="1" Grid.Row="0" />
+                        <TextBox Name="firstName" Grid.Column="1" Grid.Row="0" />
                         <Label Content="Middle Name" Grid.Column="0" Grid.Row="1"/>
                         <TextBox Grid.Column="1" Grid.Row="1"/>
                         <Label Content="Last Name" Grid.Column="0" Grid.Row="2"/>
-                        <TextBox Grid.Column="1" Grid.Row="2"/>
+                    <TextBox Name="lastName" Grid.Column="1" Grid.Row="2"/>
                     </Grid>
             </GroupBox>
             <GroupBox DockPanel.Dock="Top">
@@ -48,8 +59,24 @@
                     <Label Content="Email" Grid.Column="0" Grid.Row="1"/>
                     <TextBox Grid.Column="1" Grid.Row="1"/>
                 </Grid>
-  
             </GroupBox>
+            <GroupBox DockPanel.Dock="Top">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Age" Grid.Column="0" Grid.Row="0"/>
+                        <TextBox Name="age" Grid.Column="1" Grid.Row="0"/>
+                        <Label Content="Balance" Grid.Column="0" Grid.Row="1"/>
+                        <TextBox Grid.Column="1" Grid.Row="1"/>
+                    </Grid>
+                </GroupBox>
         </DockPanel>
+
     </Grid>
 </UserControl>
