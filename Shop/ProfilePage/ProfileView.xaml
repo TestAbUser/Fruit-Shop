@@ -11,10 +11,27 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel Grid.Column="0" LastChildFill="False">
-            <Image DockPanel.Dock="Top"></Image>
-            <TextBlock DockPanel.Dock="Top">
+
+        <DockPanel Grid.Column="0" HorizontalAlignment="Right" LastChildFill="False">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+                <Image DockPanel.Dock="Top" Grid.Column="1" Grid.Row="1" Margin="12,12,16,71">
+                <Image.Source>
+                        <BitmapImage DecodePixelWidth="200" UriSource="/Images/profile-picture.png"/>
+                    </Image.Source>
+                </Image>
+                <TextBlock VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Background="Aquamarine">
                 <TextBlock.Text>
                     <MultiBinding StringFormat=" {0} {1} &#x0a; {2} years old">
                         <Binding ElementName="firstName" Path="Text"/>
@@ -23,8 +40,9 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
+            </Grid>
         </DockPanel>
-        <DockPanel Grid.Column="1" LastChildFill="False">
+        <DockPanel Grid.Column="1" VerticalAlignment="Center" LastChildFill="False">
             <GroupBox DockPanel.Dock="Top">
                     <Grid>
                         <Grid.ColumnDefinitions>
