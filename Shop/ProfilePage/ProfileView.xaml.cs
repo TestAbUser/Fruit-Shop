@@ -24,5 +24,10 @@ namespace Shop.ProfilePage
         {
             InitializeComponent();
         }
+
+        private void GroupBox_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            balance.IsEnabled = !balance.IsEnabled;
+        }
     }
 }
