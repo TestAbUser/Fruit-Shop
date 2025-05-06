@@ -8,40 +8,8 @@ using System.Threading.Tasks;
 
 namespace Shop.ProfilePage
 {
-    public class ProfileViewModel: ObservableObject, IPageViewModel, IDataErrorInfo
+    public class ProfileViewModel: ObservableObject, IPageViewModel
     {
-        private string ?_email;
-        private string _error= string.Empty;
         public string PageName => "Profile";
-
-
-        public string? Email
-        {
-            get => _email;
-
-            set
-            {
-                if (value == _email) return;
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-            }
-        }
-
-        public string Error => _error;
-
-        string IDataErrorInfo.this[string columnName]
-        {
-            get
-            {
-                if(columnName==nameof(Email))
-                {
-                    if (!EmailValidationRegex.IsValidEmail(Email))
-                    {
-                        return "Email is not valid!";
-                    }
-                }
-                return string.Empty;
-            }
-        }
     }
 }

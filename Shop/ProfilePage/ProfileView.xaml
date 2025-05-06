@@ -10,7 +10,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
-        <um:ProductModel x:Key="myDataSource"/>
+        <um:UserModel x:Key="myDataSource"/>
     </UserControl.Resources>
 
         <Grid>

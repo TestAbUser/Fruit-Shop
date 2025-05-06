@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shop
 {
-   public class UserModel: ObservableObject
+   public partial class UserModel: ObservableObject
     {
         private string _firstName;
         private string? _middleName;
