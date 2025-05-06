@@ -79,15 +79,21 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label Content="Phone Number" Grid.Column="0" Grid.Row="0"/>
-                    <TextBox Grid.Column="1" Grid.Row="0"/>
-                    <Label Content="Email" Grid.Column="0" Grid.Row="1"/>
-                    <TextBox Name="EmailTextBox" 
-                              Text="{Binding 
+                    <TextBox Text="{Binding 
                         Source={StaticResource myDataSource}, 
-                        Path= Email,
+                        Path= PhoneNumber,
                         NotifyOnValidationError=True,
                         UpdateSourceTrigger=PropertyChanged,
-                        ValidatesOnDataErrors=True}" 
+                        ValidatesOnDataErrors=True}"
+                        Grid.Column="1" Grid.Row="0"/>
+                    <Label Content="Email" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Name="EmailTextBox" 
+                             Text="{Binding 
+                             Source={StaticResource myDataSource}, 
+                             Path= Email,
+                             NotifyOnValidationError=True,
+                             UpdateSourceTrigger=PropertyChanged,
+                             ValidatesOnDataErrors=True}" 
                              Grid.Column="1" Grid.Row="1">
                     </TextBox>
                 </Grid>
