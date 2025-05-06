@@ -14,8 +14,8 @@ namespace Shop
     {
         private string? _pictureUrl;
         private string? _name;
-        private uint _quantityInStock;
-        private uint _quantityToBuy;
+        private int _quantityInStock;
+        private int _quantityToBuy;
 
         public string? PictureUrl
         {
@@ -38,7 +38,7 @@ namespace Shop
             }
         }
 
-        public uint QuantityInStock
+        public int QuantityInStock
         {
             get => _quantityInStock;
 
@@ -50,7 +50,7 @@ namespace Shop
             }
         }
 
-        public uint QuantityToBuy
+        public int QuantityToBuy
         {
             get => _quantityToBuy;
 
