@@ -112,7 +112,6 @@
                                                 BeginTime="0:0:0"
                                                 From="65" To="230"
                                                 Duration="0:0:0.3">
-
                                 </DoubleAnimation>
                             </Storyboard>
                         </BeginStoryboard>
@@ -128,24 +127,23 @@
                           ItemsSource="{Binding PageViewModels}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal"
-                                        Width="230">
                                 <Button Background="Transparent"
                                         Command="{Binding 
                                     DataContext.SwitchPageCommand,
                                     RelativeSource={RelativeSource 
                                     AncestorType={x:Type Window}}}"
                                         CommandParameter="{Binding}">
-                                    <Image Source="/Images/home.png"
-                                           Stretch="None"
-                                           Margin="12,0,0,0"/>
+                                    <StackPanel Orientation="Horizontal"
+                                                Width="230">
+                                        <Image Source="/Images/home.png"
+                                               Stretch="None"
+                                               Margin="12,0,0,0"/>
+                                        <TextBlock Text= "{Binding PageName}"
+                                                   Margin="25,0,0,0"/>
+                                    </StackPanel>
                                 </Button>
-
-                        <TextBlock Text="Home"
-                                   Margin="25,0,0,0"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
