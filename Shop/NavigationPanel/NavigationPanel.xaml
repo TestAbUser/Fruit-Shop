@@ -17,44 +17,197 @@
             </ItemsControl.ItemTemplate>
 
         </ItemsControl>-->
-    <Grid>
-        <Grid Background="Black">
-            <Grid HorizontalAlignment="Left"
-                  Width="65">
-                <StackPanel Name="Navigation">
-                    <Grid Height="90">
-                        <ToggleButton Grid.Column="0"
+
+    <UserControl.Resources>
+
+        <ImageBrush x:Key="mouse_over"
+                    ImageSource="/Images/hamburger_icon.png"/>
+
+
+
+        <Style x:Key="toggle_style" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource mouse_over}"/>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource mouse_over}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background"
+                                         TargetName="border"
+                                         Value="{StaticResource mouse_over}"/>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource mouse_over}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Background="CadetBlue" Name="Navigation" Width="65">
+
+        <Grid Height="90">
+
+            <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Margin="73,-20,0,0"
+                                   Text="Menu"
+                                   Foreground="Black"
+                                   FontSize="22"
+                                   Background="Transparent"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"/>
+
+            <ToggleButton Grid.Column="0"
                                       VerticalAlignment="Center"
                                       HorizontalAlignment="Left"
                                       Height="30"
                                       Width="30"
-                                      Margin="18,-20,0,0">
-                            <ToggleButton.Background>
-                                <ImageBrush ImageSource="/Images/hamb-icon.png" 
+                                      Margin="18,-20,0,0"
+                                      BorderThickness="0"
+                                      Style="{StaticResource toggle_style}">
+
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="/Images/hamburger_icon.png" 
                                             Stretch="Fill"/>
-                            </ToggleButton.Background>
-                            <ToggleButton.Triggers>
-                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                                    <BeginStoryboard>
-                                        <Storyboard x:Name="ShowPanel">
-                                            <DoubleAnimation
+                </ToggleButton.Background>
+                <ToggleButton.Triggers>
+                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                        <BeginStoryboard>
+                            <Storyboard x:Name="HidePanel">
+                                <DoubleAnimation
+                                                Storyboard.TargetName="Navigation"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="230" To="65"
+                                                Duration="0:0:0.2">
+
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                        <BeginStoryboard>
+                            <Storyboard x:Name="ShowPanel">
+                                <DoubleAnimation
                                                 Storyboard.TargetName="Navigation"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
                                                 From="65" To="230"
-                                                Duration="0">
+                                                Duration="0:0:0.3">
 
-                                            </DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard> 
-                                </EventTrigger>
-                            </ToggleButton.Triggers>
-                        </ToggleButton>
-                       
-
-                    </Grid>
-                </StackPanel>
-            </Grid>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </ToggleButton.Triggers>
+            </ToggleButton>
         </Grid>
-    </Grid>
+
+        <ListView x:Name="list_view"
+                              Background="Transparent"
+                              BorderBrush="Transparent"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+            <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter"
+                                      >
+                <StackPanel Orientation="Horizontal"
+                                        Width="230">
+
+                    <Image Source="/Images/home.png"
+                                       Stretch="None"
+                                       Margin="12,0,0,0"/>
+                    <TextBlock Text="Home"
+                                           Margin="25,0,0,0"/>
+
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,15">
+
+                <StackPanel Orientation="Horizontal"
+                                        Width="230">
+
+                    <Image Source="/Images/cart.ico"
+                                       Stretch="Fill"
+                                       Margin="12,0,0,0"/>
+                    <TextBlock Text="Cart"
+                                           Margin="25,0,0,0"/>
+
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem HorizontalAlignment="Left"
+                                          Margin="0,0,0,15"
+>
+                <StackPanel Orientation="Horizontal"
+                         Width="230"
+  >
+                    <Image Source="/Images/profile.ico"
+                        Stretch="Fill"
+                        Margin="12,0,0,0"/>
+                    <TextBlock Text="Cart"
+                            Margin="25,0,0,0"/>
+
+                </StackPanel>
+            </ListViewItem>
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                <Border x:Name="brd"
+                                                    Height="50"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    Background="{TemplateBinding Background}"
+                                                    Padding="{TemplateBinding Padding}"
+                                                    SnapsToDevicePixels="True">
+
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsMouseOver" 
+                                                                   Value="True"/>
+                                        </MultiTrigger.Conditions>
+                                        <Setter Property="Background"
+                                                                TargetName="brd"
+                                                                Value="#404D5B"/>
+                                        <Setter Property="BorderBrush"
+                                                                TargetName="brd"
+                                                                Value="#404D5B"/>
+
+                                    </MultiTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+        </ListView>
+    </StackPanel>
 </UserControl>

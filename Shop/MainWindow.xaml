@@ -25,7 +25,7 @@
     </Window.Resources>
     
     <DockPanel Background="Orange">
-        <np:NavigationPanel DockPanel.Dock="Left"/>
+        <np:NavigationPanel /><!--DockPanel.Dock="Left"-->
         <h:Header DockPanel.Dock="Top"/>
         <ContentControl Content="{Binding PageViewModel}"/>
     </DockPanel>

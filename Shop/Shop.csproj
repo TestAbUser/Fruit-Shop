@@ -11,23 +11,28 @@
   <ItemGroup>
     <None Remove="Images\apples.jpg" />
     <None Remove="Images\bananas.jpg" />
+    <None Remove="Images\cart.ico" />
+    <None Remove="Images\cart.png" />
     <None Remove="Images\GreenCheckMark.png" />
     <None Remove="Images\hamburger-icon.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\pears.jpg" />
     <None Remove="Images\profile-picture.png" />
+    <None Remove="Images\profile.ico" />
     <None Remove="Images\tomatoes.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\apples.jpg" />
     <Resource Include="Images\bananas.jpg" />
+    <Resource Include="Images\cart.ico" />
     <Resource Include="Images\failedMark.png" />
-    <Resource Include="Images\hamburger_icon.PNG" />
+    <Resource Include="Images\hamburger_icon.png" />
     <Resource Include="Images\hamburger-icon.png" />
     <Resource Include="Images\home.png" />
     <Resource Include="Images\pears.jpg" />
     <Resource Include="Images\profile-picture.png" />
+    <Resource Include="Images\profile.ico" />
     <Resource Include="Images\tomatoes.jpg" />
     <Resource Include="Images\greenCheckMark.png" />
   </ItemGroup>
