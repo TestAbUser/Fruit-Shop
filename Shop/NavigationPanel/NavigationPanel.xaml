@@ -4,27 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Shop.NavigationPanel"
+             xmlns:hp="clr-namespace:Shop.HomePage"
+             xmlns:cp="clr-namespace:Shop.CartPage" 
+             d:DataContext="{d:DesignInstance Type=local:NavigationViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
     <!--<ItemsControl ItemsSource="{Binding PageViewModels}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding PageName}"
-                            Command="{Binding DataContext.SwitchPageCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                            CommandParameter="{Binding}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-
-        </ItemsControl>-->
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Button Content="{Binding PageName}"
+                         Command="{Binding DataContext.SwitchPageCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                         CommandParameter="{Binding}"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>-->
 
     <UserControl.Resources>
-
+        <!--<hp:HomePageViewModel x:Key="myDataSource"/>
+        <cp:CartViewModel x:Key="myDataSource1"/>-->
         <ImageBrush x:Key="mouse_over"
                     ImageSource="/Images/hamburger_icon.png"/>
-
-
-
         <Style x:Key="toggle_style" TargetType="{x:Type ToggleButton}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -35,7 +35,8 @@
                                 SnapsToDevicePixels="True">
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger Property="IsMouseOver" 
+                                     Value="True">
                                 <Setter Property="Background"
                                         TargetName="border"
                                         Value="{StaticResource mouse_over}"/>
@@ -44,10 +45,11 @@
                                         TargetName="border"
                                         Value="{StaticResource mouse_over}"/>
                             </Trigger>
-                            <Trigger Property="IsChecked" Value="True">
+                            <Trigger Property="IsChecked" 
+                                     Value="True">
                                 <Setter Property="Background"
-                                         TargetName="border"
-                                         Value="{StaticResource mouse_over}"/>
+                                        TargetName="border"
+                                        Value="{StaticResource mouse_over}"/>
 
                                 <Setter Property="BorderBrush"
                                         TargetName="border"
@@ -59,10 +61,10 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <StackPanel Background="CadetBlue" Name="Navigation" Width="65">
-
+    <StackPanel Background="CadetBlue" 
+                Name="Navigation" 
+                Width="65">
         <Grid Height="90">
-
             <TextBlock Grid.Row="1"
                                    Grid.Column="0"
                                    Margin="73,-20,0,0"
@@ -84,7 +86,7 @@
 
                 <ToggleButton.Background>
                     <ImageBrush ImageSource="/Images/hamburger_icon.png" 
-                                            Stretch="Fill"/>
+                                Stretch="Fill"/>
                 </ToggleButton.Background>
                 <ToggleButton.Triggers>
                     <EventTrigger RoutedEvent="ToggleButton.Unchecked">
@@ -118,56 +120,32 @@
                 </ToggleButton.Triggers>
             </ToggleButton>
         </Grid>
-
-        <ListView x:Name="list_view"
-                              Background="Transparent"
-                              BorderBrush="Transparent"
-                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-
-            <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,15"
-                                      >
-                <StackPanel Orientation="Horizontal"
+            
+                <ListView x:Name="list_view"
+                          Background="Transparent"
+                          BorderBrush="Transparent"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ItemsSource="{Binding PageViewModels}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
                                         Width="230">
+                                <Button Background="Transparent"
+                                        Command="{Binding 
+                                    DataContext.SwitchPageCommand,
+                                    RelativeSource={RelativeSource 
+                                    AncestorType={x:Type Window}}}"
+                                        CommandParameter="{Binding}">
+                                    <Image Source="/Images/home.png"
+                                           Stretch="None"
+                                           Margin="12,0,0,0"/>
+                                </Button>
 
-                    <Image Source="/Images/home.png"
-                                       Stretch="None"
-                                       Margin="12,0,0,0"/>
-                    <TextBlock Text="Home"
-                                           Margin="25,0,0,0"/>
-
-                </StackPanel>
-            </ListViewItem>
-
-            <ListViewItem HorizontalAlignment="Left"
-                                      Margin="0,0,0,15">
-
-                <StackPanel Orientation="Horizontal"
-                                        Width="230">
-
-                    <Image Source="/Images/cart.ico"
-                                       Stretch="None"
-                                       Margin="12,0,0,0"/>
-                    <TextBlock Text="Cart"
-                                           Margin="25,0,0,0"/>
-
-                </StackPanel>
-            </ListViewItem>
-
-            <ListViewItem HorizontalAlignment="Left"
-                                          Margin="0,0,0,15"
->
-                <StackPanel Orientation="Horizontal"
-                         Width="230"
-  >
-                    <Image Source="/Images/profile.ico"
-                        Stretch="None"
-                        Margin="12,0,0,0"/>
-                    <TextBlock Text="Cart"
-                            Margin="25,0,0,0"/>
-
-                </StackPanel>
-            </ListViewItem>
+                        <TextBlock Text="Home"
+                                   Margin="25,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -207,6 +185,7 @@
                     </Setter>
                 </Style>
             </ListView.ItemContainerStyle>
-        </ListView>
+    </ListView>
     </StackPanel>
+
 </UserControl>

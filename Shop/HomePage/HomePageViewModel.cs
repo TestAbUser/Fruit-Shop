@@ -13,6 +13,9 @@ namespace Shop.HomePage
         private readonly ProductModel _product;
         public string PageName => "Home";
 
+        public HomePageViewModel()
+        {
+        }
         public HomePageViewModel(ProductModel product) 
         {
             _product= product;
