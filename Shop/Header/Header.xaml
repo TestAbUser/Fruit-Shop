@@ -12,18 +12,36 @@
 
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type hp:HomePageViewModel}">
-            <TextBlock Text="{Binding Path=PageName}"/>
+            <TextBlock Text="{Binding Path=PageName}" FontSize="22"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type cp:CartViewModel}">
-            <TextBlock Text="{Binding Path=PageName}"/>
+            <TextBlock Text="{Binding Path=PageName}" FontSize="22"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type pp:ProfileViewModel}">
-            <TextBlock Text="{Binding Path=PageName}"/>
+            <TextBlock Text="{Binding Path=PageName}" FontSize="22"/>
         </DataTemplate>
     </UserControl.Resources>
 
-    <Grid>
-        <ContentControl Content="{Binding PageViewModel}"/>
-    </Grid>
+        <Border Visibility="Visible" BorderThickness="2" 
+                 CornerRadius="5" Margin="10,10,10,10">
+            <StackPanel >
+            <Grid>
+                <ContentControl Content="{Binding PageViewModel}"/>
+            </Grid>
+            </StackPanel>
+        </Border>
+
+    <!--<TabControl>
+        <TabItem>
+            <TabItem.Header>
+                --><!--<StackPanel Orientation="Horizontal">--><!--
+                    <TextBlock>
+                        <ContentControl Content="{Binding PageViewModel}"/>
+                    </TextBlock>
+                --><!--</StackPanel>--><!--
+            </TabItem.Header>
+        
+        </TabItem>
+    </TabControl>-->
 
 </UserControl>
