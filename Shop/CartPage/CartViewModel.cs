@@ -19,6 +19,7 @@ namespace Shop.CartPage
         }
 
         public string PageName => "Cart";
+        public string PageIconUrl => "/Images/cart.ico";
 
         public ObservableCollection<ProductModel> Products { get; } = [];
 

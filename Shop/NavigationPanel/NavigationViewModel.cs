@@ -9,9 +9,8 @@ using System.Windows.Input;
 
 namespace Shop.NavigationPanel
 {
-    public class NavigationViewModel : ObservableObject, IPageViewModel
+    public class NavigationViewModel : ObservableObject
     {
-        public string PageName => "Navigation";
 
         private IPageViewModel? _pageViewModel;
         private List<IPageViewModel>? _pageViewModels;
