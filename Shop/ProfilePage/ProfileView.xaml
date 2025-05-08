@@ -7,69 +7,112 @@
              xmlns:local="clr-namespace:Shop.ProfilePage"
              d:DataContext="{d:DesignInstance Type=local:ProfileViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             FontSize="15">
 
     <UserControl.Resources>
         <um:UserModel x:Key="myDataSource"/>
     </UserControl.Resources>
 
-        <Grid Background="AliceBlue">
+    <Grid x:Name="parent" Background="AliceBlue">
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Column="0" HorizontalAlignment="Right" LastChildFill="False">
-            <Grid>
+        <DockPanel HorizontalAlignment="Right" 
+                   Grid.Column="0" 
+                   LastChildFill="False">
+            
+            <Grid x:Name="picture"
+                  Margin="0,0,50,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                <Image DockPanel.Dock="Top" Grid.Column="1" Grid.Row="1" Margin="12,12,16,71">
-                <Image.Source>
-                        <BitmapImage DecodePixelWidth="200" UriSource="/Images/profile-picture.png"/>
+                <Image DockPanel.Dock="Top" 
+                       Grid.Column="1" 
+                       Grid.Row="0" 
+                       Margin="12,12,16,71">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="200" 
+                                     UriSource="/Images/profile-picture.png"/>
                     </Image.Source>
                 </Image>
-                <TextBlock VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Background="AliceBlue">
-                <TextBlock.Text>
-                    <MultiBinding StringFormat=" {0} {1} &#x0a; {2} years old">
-                        <Binding ElementName="firstName" Path="Text"/>
-                        <Binding ElementName="lastName" Path="Text"/>
-                        <Binding ElementName="age" Path="Text"/>
-                    </MultiBinding>
-                </TextBlock.Text>
-            </TextBlock>
+
+                <TextBlock VerticalAlignment="Bottom" 
+                           HorizontalAlignment="Center"
+                           Grid.Column="1" 
+                           Grid.Row="0" 
+                           Background="AliceBlue">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat=" {0} {1}, {2}">
+                            <Binding ElementName="firstName" 
+                                     Path="Text"/>
+                            <Binding ElementName="lastName" 
+                                     Path="Text"/>
+                            <Binding ElementName="age" 
+                                     Path="Text"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
             </Grid>
         </DockPanel>
-        <DockPanel Grid.Column="1" VerticalAlignment="Center" LastChildFill="False">
-            <GroupBox DockPanel.Dock="Top">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Label Content="First Name" Grid.Column="0" Grid.Row="0"/>
-                        <TextBox Name="firstName" Grid.Column="1" Grid.Row="0" />
-                        <Label Content="Middle Name" Grid.Column="0" Grid.Row="1"/>
-                        <TextBox Grid.Column="1" Grid.Row="1"/>
-                        <Label Content="Last Name" Grid.Column="0" Grid.Row="2"/>
-                    <TextBox Name="lastName" Grid.Column="1" Grid.Row="2"/>
-                    </Grid>
+
+        <DockPanel Grid.Column="1" 
+                   VerticalAlignment="Top"
+                   Margin="0,20,0,0"
+                   LastChildFill="False">
+
+            <GroupBox DockPanel.Dock="Top"
+                      Margin="0,0,0,20">
+                
+                <Grid x:Name="names"
+                      Margin="0,6,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Content="First Name"
+                               Grid.Column="0" 
+                               Grid.Row="0"
+                           />
+                    <TextBox Name="firstName" 
+                             Grid.Column="1" 
+                             Grid.Row="0" />
+                    <Label Content="Middle Name"
+                           Grid.Column="0" 
+                           Grid.Row="1"/>
+                    <TextBox Grid.Column="1" 
+                             Grid.Row="1"/>
+                    <Label Content="Last Name" 
+                           Grid.Column="0" 
+                           Grid.Row="2"/>
+                    <TextBox Name="lastName" 
+                             Grid.Column="1" 
+                             Grid.Row="2"/>
+                </Grid>
             </GroupBox>
-            <GroupBox DockPanel.Dock="Top">
-                <Grid>
+
+            <GroupBox DockPanel.Dock="Top"
+                      Margin="0,0,0,20">
+                
+                <Grid x:Name="phoneEmail"
+                      Margin="0,6,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -78,15 +121,23 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Phone Number" Grid.Column="0" Grid.Row="0"/>
+                    
+                    <Label Content="Phone Number" 
+                           Grid.Column="0" 
+                           Grid.Row="0"/>
                     <TextBox Text="{Binding 
                         Source={StaticResource myDataSource}, 
                         Path= PhoneNumber,
                         NotifyOnValidationError=True,
                         UpdateSourceTrigger=PropertyChanged,
                         ValidatesOnDataErrors=True}"
-                        Grid.Column="1" Grid.Row="0"/>
-                    <Label Content="Email" Grid.Column="0" Grid.Row="1"/>
+                             Grid.Column="1" 
+                             Grid.Row="0"
+                             />
+                    <Label Content="Email" 
+                           Grid.Column="0" 
+                           Grid.Row="1"/>
+                    
                     <TextBox Name="EmailTextBox" 
                              Text="{Binding 
                              Source={StaticResource myDataSource}, 
@@ -94,27 +145,41 @@
                              NotifyOnValidationError=True,
                              UpdateSourceTrigger=PropertyChanged,
                              ValidatesOnDataErrors=True}" 
-                             Grid.Column="1" Grid.Row="1">
+                             Grid.Column="1" 
+                             Grid.Row="1">
                     </TextBox>
                 </Grid>
             </GroupBox>
-            <GroupBox MouseRightButtonUp="GroupBox_MouseRightButtonUp" DockPanel.Dock="Top">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Label Content="Age" Grid.Column="0" Grid.Row="0"/>
-                        <TextBox Name="age" Grid.Column="1" Grid.Row="0"/>
-                        <Label Content="Balance" Grid.Column="0" Grid.Row="1"/>
-                        <TextBox Name="balance" IsEnabled="False" 
-                                 Grid.Column="1" Grid.Row="1"/>
-                    </Grid>
-                </GroupBox>
+            
+            <GroupBox MouseRightButtonUp="GroupBox_MouseRightButtonUp" 
+                      DockPanel.Dock="Top">
+                
+                <Grid x:Name="ageBalance"
+                      Margin="0,6,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label Content="Age" 
+                           Grid.Column="0" 
+                           Grid.Row="0"/>
+                    <TextBox Name="age" 
+                             Grid.Column="1" 
+                             Grid.Row="0"/>
+                    <Label Content="Balance" 
+                           Grid.Column="0" 
+                           Grid.Row="1"/>
+                    <TextBox Name="balance" 
+                             IsEnabled="False" 
+                             Grid.Column="1" 
+                             Grid.Row="1"/>
+                </Grid>
+            </GroupBox>
         </DockPanel>
 
     </Grid>

@@ -29,7 +29,8 @@
                   Grid.Row="0" 
                   IsReadOnly="False"
                   CanUserAddRows="False"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  FontSize="15">
             <DataGrid.Resources>
                 <Style x:Key="ImageStyle" TargetType="{x:Type Image}">
                     <Setter Property="Source" Value="/Images/greenCheckMark.png"/>
@@ -47,7 +48,6 @@
                 <DataGridTextColumn Header="Product"
                                     IsReadOnly="True"
                                     Width="*"
-                                    FontSize="12"
                                     Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Quantity"
                                     IsReadOnly="False"
