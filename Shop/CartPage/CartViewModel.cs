@@ -1,10 +1,5 @@
 ﻿using Shop.UtilityClasses;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.CartPage
 {
@@ -22,6 +17,5 @@ namespace Shop.CartPage
         public string PageIconUrl => "/Images/cart.ico";
 
         public ObservableCollection<ProductModel> Products { get; } = [];
-
     }
 }

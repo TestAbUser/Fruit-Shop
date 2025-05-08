@@ -31,17 +31,4 @@
             </StackPanel>
         </Border>
 
-    <!--<TabControl>
-        <TabItem>
-            <TabItem.Header>
-                --><!--<StackPanel Orientation="Horizontal">--><!--
-                    <TextBlock>
-                        <ContentControl Content="{Binding PageViewModel}"/>
-                    </TextBlock>
-                --><!--</StackPanel>--><!--
-            </TabItem.Header>
-        
-        </TabItem>
-    </TabControl>-->
-
-</UserControl>
+  </UserControl>

@@ -14,7 +14,6 @@
     <None Remove="Images\cart.ico" />
     <None Remove="Images\cart.png" />
     <None Remove="Images\GreenCheckMark.png" />
-    <None Remove="Images\hamburger-icon.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\pears.jpg" />
     <None Remove="Images\profile-picture.png" />
@@ -28,7 +27,6 @@
     <Resource Include="Images\cart.ico" />
     <Resource Include="Images\failedMark.png" />
     <Resource Include="Images\hamburger_icon.png" />
-    <Resource Include="Images\hamburger-icon.png" />
     <Resource Include="Images\home.png" />
     <Resource Include="Images\pears.jpg" />
     <Resource Include="Images\profile-picture.png" />

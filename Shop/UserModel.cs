@@ -1,21 +1,16 @@
 ﻿using Shop.UtilityClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop
 {
-   public partial class UserModel: ObservableObject
+    public partial class UserModel : ObservableObject
     {
-        private string _firstName;
-        private string? _middleName;
-        private string _lastName;
-        private string _phoneNumber;
+        private string _firstName = string.Empty;
+        private string _middleName = string.Empty;
+        private string _lastName = string.Empty;
+        private string _phoneNumber = string.Empty;
         private int _age;
         private decimal _balance;
-        private string _email;
+        private string _email = string.Empty;
 
         public string FirstName
         {

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+﻿using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Shop.UtilityClasses
 {
@@ -34,11 +29,11 @@ namespace Shop.UtilityClasses
                     return match.Groups[1].Value + domainName;
                 }
             }
-            catch (RegexMatchTimeoutException e)
+            catch (RegexMatchTimeoutException)
             {
                 return false;
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
                 return false;
             }

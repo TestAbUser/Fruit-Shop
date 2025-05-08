@@ -1,17 +1,12 @@
 ﻿using Shop.UtilityClasses;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Shop
 {
     public partial class UserModel : IDataErrorInfo
     {
-        private string _error = string.Empty;
+        private readonly string _error = string.Empty;
 
         public string Error => _error;
 

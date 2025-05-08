@@ -25,7 +25,7 @@
     </Window.Resources>
     
     <DockPanel Background="Azure">
-        <np:NavigationPanel /><!--DockPanel.Dock="Left"-->
+        <np:NavigationPanel />
         <h:Header DockPanel.Dock="Top"/>
         <ContentControl Content="{Binding PageViewModel}"/>
     </DockPanel>

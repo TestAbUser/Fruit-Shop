@@ -41,7 +41,7 @@
                 <Image DockPanel.Dock="Top" 
                        Grid.Column="1" 
                        Grid.Row="0" 
-                       Margin="12,12,16,71">
+                       Margin="12,20,16,71">
                     <Image.Source>
                         <BitmapImage DecodePixelWidth="200" 
                                      UriSource="/Images/profile-picture.png"/>

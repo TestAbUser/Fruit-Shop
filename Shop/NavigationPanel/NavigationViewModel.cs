@@ -2,22 +2,18 @@
 using Shop.HomePage;
 using Shop.ProfilePage;
 using Shop.UtilityClasses;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Input;
 
 namespace Shop.NavigationPanel
 {
     public class NavigationViewModel : ObservableObject
     {
-
         private IPageViewModel? _pageViewModel;
         private List<IPageViewModel>? _pageViewModels;
 
         private ICommand? _switchPageCommand;
 
-        public NavigationViewModel() 
+        public NavigationViewModel()
         {
             ProductModel product = new();
             PageViewModels.Add(new HomePageViewModel(product));
@@ -28,7 +24,7 @@ namespace Shop.NavigationPanel
         }
 
         public ICommand SwitchPageCommand =>
-            _switchPageCommand ??= new RelayCommand(vm => SwitchPage((IPageViewModel)vm));
+            _switchPageCommand ??= new RelayCommand(vm => SwitchPage((IPageViewModel?)vm));
 
         public List<IPageViewModel> PageViewModels => _pageViewModels ??= [];
 
@@ -43,13 +39,14 @@ namespace Shop.NavigationPanel
             }
         }
 
-        private void SwitchPage(IPageViewModel viewModel)
+        private void SwitchPage(IPageViewModel? viewModel)
         {
+            ArgumentNullException.ThrowIfNull(viewModel, nameof(viewModel));
+
             if (!PageViewModels.Contains(viewModel))
                 PageViewModels.Add(viewModel);
 
             PageViewModel = PageViewModels.FirstOrDefault(v => v == viewModel);
         }
-
     }
 }
