@@ -9,23 +9,27 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <DockPanel Background="AliceBlue">
-        <TextBlock DockPanel.Dock="Top">
+        <Label DockPanel.Dock="Top">
+        <TextBlock  
+                   Margin="0,10,0,10" 
+                   FontSize="15">
             <TextBlock.Text>
                 <MultiBinding StringFormat="Total number of products: {0}">
                     <Binding ElementName="dataGrid" Path="Items.Count"/>
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
+        </Label>
 
         <DataGrid x:Name="dataGrid" DockPanel.Dock="Top"
                   ItemsSource="{Binding Products}"
                   LoadingRow="DataGrid_LoadingRow"
-          HorizontalGridLinesBrush="CadetBlue"
-          VerticalGridLinesBrush="CadetBlue"
-          Grid.Row="0" 
-          IsReadOnly="False"
-          CanUserAddRows="False"
-          AutoGenerateColumns="False">
+                  HorizontalGridLinesBrush="CadetBlue"
+                  VerticalGridLinesBrush="CadetBlue"
+                  Grid.Row="0" 
+                  IsReadOnly="False"
+                  CanUserAddRows="False"
+                  AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style x:Key="ImageStyle" TargetType="{x:Type Image}">
                     <Setter Property="Source" Value="/Images/greenCheckMark.png"/>
@@ -41,13 +45,14 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Product"
-                            IsReadOnly="True"
-                            Width="*"
-                            Binding="{Binding Name}"/>
+                                    IsReadOnly="True"
+                                    Width="*"
+                                    FontSize="12"
+                                    Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Quantity"
-                                IsReadOnly="False"
-                                Width="*"
-                                Binding="{Binding QuantityToBuy}"/>
+                                    IsReadOnly="False"
+                                    Width="*"
+                                    Binding="{Binding QuantityToBuy}"/>
                 <DataGridTemplateColumn Header="In Stock"
                                         Width="Auto"
                                         IsReadOnly="True"
