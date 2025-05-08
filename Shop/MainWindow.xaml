@@ -24,7 +24,7 @@
         </DataTemplate>
     </Window.Resources>
     
-    <DockPanel Background="Orange">
+    <DockPanel Background="Azure">
         <np:NavigationPanel /><!--DockPanel.Dock="Left"-->
         <h:Header DockPanel.Dock="Top"/>
         <ContentControl Content="{Binding PageViewModel}"/>

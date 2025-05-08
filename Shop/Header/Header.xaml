@@ -24,7 +24,7 @@
 
         <Border Visibility="Visible" BorderThickness="2" 
                  CornerRadius="5" Margin="10,10,10,10">
-            <StackPanel >
+            <StackPanel>
             <Grid>
                 <ContentControl Content="{Binding PageViewModel}"/>
             </Grid>

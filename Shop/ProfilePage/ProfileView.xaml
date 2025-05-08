@@ -13,7 +13,7 @@
         <um:UserModel x:Key="myDataSource"/>
     </UserControl.Resources>
 
-        <Grid>
+        <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -37,7 +37,7 @@
                         <BitmapImage DecodePixelWidth="200" UriSource="/Images/profile-picture.png"/>
                     </Image.Source>
                 </Image>
-                <TextBlock VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Background="Aquamarine">
+                <TextBlock VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Background="AliceBlue">
                 <TextBlock.Text>
                     <MultiBinding StringFormat=" {0} {1} &#x0a; {2} years old">
                         <Binding ElementName="firstName" Path="Text"/>
